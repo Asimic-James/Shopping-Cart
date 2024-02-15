@@ -33,7 +33,7 @@ const products = [
     id: 4,
     name: "Chocolate Cupcake",
     price: 5.99,
-    category: "Cupcake"
+    category: "Cupcake",
   },
   {
     id: 5,
@@ -84,3 +84,32 @@ const products = [
     category: "Cupcake",
   },
 ];
+
+products.forEach(
+  ({ name, id, price, category }) => {
+    dessertCards.innerHTML += `
+      <div class="dessert-card">
+        <h2>${name}</h2>
+        <p class="dessert-price">$${price}</p>
+        <p class="product-category">Category: ${category}</p>
+        <button 
+          id="${id}" 
+          class="btn add-to-cart-btn">Add to cart
+        </button>
+      </div>
+    `;
+  }
+);
+
+class ShoppingCart {
+  constructor() {
+    this.items = [];
+    this.total = 0;
+    this.taxRate = 8.25;
+  }
+
+  addItem(id, products) {
+    const product = products.find((item) => item.id === id);
+     const name = "name";
+  }
+};
